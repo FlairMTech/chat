@@ -1,7 +1,6 @@
 const express = require("express");
 const mysql = require("mysql2/promise");
 const app = express();
-const userRoutes = require("./routes/userRoutes");
 const cors = require("cors");
 require('dotenv').config();
 
@@ -9,7 +8,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
-app.use("/users", userRoutes);
 app.get('/', (req, res) => {
   res.set('Content-Type', 'text/html; charset=ytf-8');
   res.send("<h1>Hello From Live</h1>");
