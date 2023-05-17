@@ -40,7 +40,7 @@ const io = require("socket.io")(server, {
     methods: ["GET", "POST"]
   }
 });
-const [rows] = await connection.query("SELECT * FROM students");
+const [rows] = connection.query("SELECT * FROM students");
 console.log(rows);
 io.on("connection", (socket) => {
   socket.on("new-user", async () => {
