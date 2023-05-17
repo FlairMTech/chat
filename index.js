@@ -36,7 +36,7 @@ const server = require("http").createServer(app);
 const PORT = 5001;
 const io = require("socket.io")(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin:,
     methods: ["GET", "POST"],
   },
 });
@@ -75,7 +75,7 @@ io.on("connection", (socket) => {
 });
 
 connect().then(() => {
-  server.listen(5000, (req, res) => {
+  server.listen(PORT || 4040, (req, res) => {
    console.log("Server Started")
   });
 });
