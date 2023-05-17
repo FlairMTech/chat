@@ -38,7 +38,8 @@ const io = require("socket.io")(server, {
  cors: {
     origins: "*:*",
     methods: ["GET", "POST"]
-  }
+  },
+    transports: ["websocket"]
 });
 
 io.on("connection", (socket) => {
