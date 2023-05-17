@@ -34,7 +34,12 @@ async function getLastMessagesFromRoom(room) {
 
 const server = require("http").createServer(app);
 const PORT = 5001;
-const io = require("socket.io")(server, {port: PORT});
+const io = require("socket.io")(server, {
+ cors: {
+    origins: "*:*",
+    methods: ["GET", "POST"]
+  }
+});
 
 io.on("connection", (socket) => {
   socket.on("new-user", async () => {
