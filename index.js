@@ -33,7 +33,7 @@ async function getLastMessagesFromRoom(room) {
 }
 
 const server = require("http").createServer(app);
-const PORT = 5001;
+const PORT = process.env.PORT || 5000;
 const io = require("socket.io")(server, {
  cors: {
     origins: "*:*",
@@ -75,9 +75,9 @@ io.on("connection", (socket) => {
 });
 
 connect().then(() => {
-  server.listen(PORT || 4040, (req, res) => {
-   console.log("Server Started")
-  });
+  server.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
+});
 });
 
 module.exports = connection;
