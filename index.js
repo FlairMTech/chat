@@ -22,14 +22,6 @@ async function connect() {
     database:process.env.DATABASE,
   });
   console.log("Connected to MySQL database.");
-    // Query to get all students
-  const [rows, fields] = await connection.execute("SELECT * FROM students");
-
-  // Print all students to the console
-  console.log("All students:");
-  rows.forEach((row) => {
-    console.log(row);
-  });
 }
 
 async function getLastMessagesFromRoom(room) {
