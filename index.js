@@ -81,4 +81,3 @@ connect().then(() => {
 });
 });
 
-module.exports = connection;
