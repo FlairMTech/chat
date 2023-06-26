@@ -10,7 +10,7 @@ app.use(cors());
 
 app.get('/', (req, res) => {
   res.set('Content-Type', 'text/html; charset=ytf-8');
-  res.send("<h1>Hello From Live</h1>");
+  res.send(`<h1>Hello From Live on ${PORT}</h1>`);
 })
 let connection;
 
