@@ -2,6 +2,7 @@ const express = require("express");
 const mysql = require("mysql2/promise");
 const app = express();
 const cors = require("cors");
+const PORT = process.env.PORT || 5000;
 require('dotenv').config();
 
 app.use(express.urlencoded({ extended: true }));
@@ -33,7 +34,7 @@ async function getLastMessagesFromRoom(room) {
 }
 
 const server = require("http").createServer(app);
-const PORT = process.env.PORT || 5000;
+
 const io = require("socket.io")(server, {
  cors: {
     methods: ["GET", "POST"]
