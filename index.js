@@ -36,7 +36,6 @@ const server = require("http").createServer(app);
 const PORT = process.env.PORT || 5000;
 const io = require("socket.io")(server, {
  cors: {
-    origins: "*:*",
     methods: ["GET", "POST"]
   },
     transports: ["websocket"]
